@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <style>
+      
+.hidden{
+    display: none;
+}
+.innerbor {
+    border:10px solid #1d1d23;
+            background-color: #e58f00;
+            margin-top: 40px;
+            margin-left: 100px;
+            margin-right: 100px;
+            padding: 15px;
+            border-radius: 20%;
+            width: 300px;
+            
+        }
+
+        span {
+            margin-right: 21px;
+            font-size: 18px;
+            /* font-family: ; */
+            /* text-decoration-color: peru; */
+            color: rgb(13, 2, 1);
+        }
+
+        input {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            /* border-radius: 30px; */
+            height: 30px;
+            /* width:100px; */
+            border-color: rgb(99, 9, 243);
+            /* position: relative; */
+        }
+        select{
+            margin-top: 10px;
+            margin-bottom: 15px;
+            height: 30px;
+            border-color: rgb(99, 9, 243);
+            font-size: 15px;
+        }
+        /* body{
+            background:url('pexels-ravi-kant-2221515.jpg') no-repeat center center fixed;
+    background-size:cover;
+        } */
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2 style="margin-top: 50px;margin-bottom: 50px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Customer Details</h2>
+    </center>
+    
+    
+    <center >
+    
+        <div class="innerbor">
+        <form action="">
+            
+            <div>
+                <span>Name</span><input type="text">
+            </div>
+            <div>
+                <span>E-mail</span><input type="email" name="" id="">
+            </div>
+            <div>
+                <span>Phone Number</span><input type="text" name="" id="">
+            </div>
+            <div>
+                <span>Address</span><input type="" name="" id="">
+            </div>
+            <div>
+                <span>Food Type</span>
+                <select name="FoodType" id="food" onchange="showItems()">
+                    placeholder
+                    <option value="" disabled selected>Food</option>
+                    <option value="brf">Breakfast</option>
+                    <option value="lun">Lunch</option>
+                    <option value="sna">Snacks</option>
+                    <option value="din">Dinner</option>
+                </select>
+            </div>
+            <div class="hidden" id="bft">
+                <span>Breakfast</span>
+                <select name="brfast" >
+                    <option value="dosa">Dosa</option>
+                    <option value="idli">Idli</option>
+                </select>
+            </div>
+            <div class="hidden" id="lu">
+                <span>Lunch</span>
+                <select name="lnch" >
+                    <option value="lece">Lemon Rice</option>
+                    <option value="pann">Panner Masala</option>
+                </select>
+            </div>
+            <div class="hidden" id="di">
+                <span>Dinner</span>
+                <select name="dinn" >
+                    <option value="bir">Biryani</option>
+                    <option value="pann">Panner Masala</option>
+                </select>
+            </div>
+            <div class="hidden" id="sn">
+                <span>Snacks</span>
+                <select name="snac" >
+                    <option value="pa">Pani Puri</option>
+                    <option value="pt">Potato Twister</option>
+                </select>
+            </div>
+            <div>
+                <center><input type="submit" style="display: flex;height: 30px;width: 60px;font-size: 15px;text-align: center;margin-bottom: 6px;"></center>
+            </div>
+
+        </form>
+        </div>
+    
+    </center>
+    <script>
+function showItems()
+{
+    var op=document.getElementById("food");
+var l=document.getElementById("lu");
+var b=document.getElementById("bft");
+var s=document.getElementById("sn");
+var d=document.getElementById("di");
+
+if(op.value==="brf")
+{
+    b.classList.remove("hidden");
+    s.classList.add("hidden");
+    l.classList.add("hidden");
+    d.classList.add("hidden");
+}
+else if(op.value==="sna")
+{
+    s.classList.remove("hidden");
+    l.classList.add("hidden");
+    d.classList.add("hidden");
+    b.classList.add("hidden");
+}
+else if(op.value==="lun")
+{
+    l.classList.remove("hidden");
+    s.classList.add("hidden");
+    d.classList.add("hidden");
+    b.classList.add("hidden");
+}
+else if(op.value==="din")
+{
+    d.classList.remove("hidden");
+    s.classList.add("hidden");
+    l.classList.add("hidden");
+    b.classList.add("hidden");
+}
+}
+
+  
+    </script>
+</body>
+
+</html>
