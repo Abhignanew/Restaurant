@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add this style to set a fixed width and height for the images */
+    .menuItem img {
+      width: 200px; /* Adjust the width as needed */
+      height: 150px; /* Adjust the height as needed */
+      object-fit: cover; /* Maintain aspect ratio and cover the container */
+      border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+    }
+  </style>
+  <title>Restaurant Menu</title>
+</head>
+<body>
+
+  <header>
+    <h1>Restaurant Menu</h1>
+  </header>
+
+  <div id="menu">
+    <div class="category">Breakfast</div>
+    <div class="menuItem" onclick="showDetails('dosa', 'dosa.jpg', 'Rs-55')">
+      <img src="dosa.jpg" alt="Dosa">
+      DOSA - Rs-55
+    </div>
+    <div class="menuItem" onclick="showDetails('idli', 'idli.jpg', 'Rs-30')">
+      <img src="idli.jpg" alt="Idli">
+      IDLI - Rs-30
+    </div>
+    <div class="menuItem" onclick="showDetails('puri', 'puri.jpg', 'Rs-60')">
+      <img src="puri.jpg" alt="puri">
+      PURI - Rs-60
+    </div>
+    <div class="menuItem" onclick="showDetails('pongal', 'pongal.jpg', 'Rs-40')">
+      <img src="pongal.jpg" alt="pongal">
+      PONGAL - Rs-40
+    </div>
+
+    <div class="category">Lunch</div>
+    <div class="menuItem" onclick="showDetails('South Indian meal', 'south.jpg', '12.99')">
+      <img src="south.jpg" alt="South Indian meal">
+      SOUTH INDIAN MEAL - Rs-80
+    </div>
+    <div class="menuItem" onclick="showDetails('North Indian meal', 'north.jpg', '11.49')">
+      <img src="north.jpg" alt="North Indian meal">
+      NORTH INDIAN MEAL - Rs-80
+    </div>
+
+    <div class="menuItem" onclick="showDetails('Curdrice', 'Curdrice.jpg', '16.99')">
+      <img src="Curdrice.jpg" alt="Curdrice">
+      CURD RICE -Rs-70
+    </div>
+    <div class="menuItem" onclick="showDetails('roticurry', 'roticurry.jpg', '21.99')">
+      <img src="roticurry.jpg" alt="Roticurry">
+      ROTI CURRY- Rs-60
+    </div>
+
+    <div class="category">Snacks</div>
+    <div class="menuItem" onclick="showDetails('Pani puri', 'panipuri.jpg', '14.99')">
+      <img src="panipuri.jpg" alt="Pani puri">
+      PANI PURI - Rs-40
+    </div>
+    <div class="menuItem" onclick="showDetails('Icecream', 'icecream.jpg', '9.49')">
+      <img src="icecream.jpg" alt="Icecream">
+      ICECREAM - Rs-30
+    </div>
+    <div class="menuItem" onclick="showDetails('frenchfries', 'frenchfries.jpg', '14.99')">
+      <img src="frenchfries.jpg" alt="">
+      FRENCH FRIES- Rs-50
+    </div>
+
+    <div class="category">Dinner</div>
+    <div class="menuItem" onclick="showDetails('Curdrice', 'Curdrice.jpg', '16.99')">
+      <img src="Curdrice.jpg" alt="Curdrice">
+      CURD RICE -Rs-70
+    </div>
+    <div class="menuItem" onclick="showDetails('roticurry', 'roticurry.jpg', '21.99')">
+      <img src="roticurry.jpg" alt="Roticurry">
+      ROTI CURRY- Rs-60
+    </div>
+    <div class="menuItem" onclick="showDetails('South Indian meal', 'south.jpg', '12.99')">
+      <img src="south.jpg" alt="South Indian meal">
+      SOUTH INDIAN MEAL - Rs-80
+    </div>
+    <div class="menuItem" onclick="showDetails('North Indian meal', 'north.jpg', '11.49')">
+      <img src="north.jpg" alt="North Indian meal">
+      NORTH INDIAN MEAL - Rs-80
+    </div>
+
+  </div>
+
+  <button id="navigateButton" onclick="navigateToOtherPage()">Next Page</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
