@@ -47,7 +47,7 @@ const sr = ScrollReveal ({
     distance : '45px',
     duration : 2700,
     reset : true,
-})
+  })
 
   sr.reveal('.myimageabout',{ delay:350, origin:'left' })
   sr.reveal('.about-text-content',{ delay:350, origin:'right' })
