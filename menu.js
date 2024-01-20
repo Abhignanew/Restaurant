@@ -30,7 +30,9 @@ menuData.forEach(dish => {
     <label for="quantity_${dish.id}">Quantity:</label>
     <input type="number" id="quantity_${dish.id}" value="1" min="1">
     <button onclick="addToCart(${dish.id}, '${dish.name}', ${dish.price})">Add</button>
+    
   `;
+  
   menuContainer.appendChild(card);
 });
 
@@ -98,6 +100,23 @@ function calculateAndDisplayTotal() {
   const cartContainer = document.getElementById('cart');
   cartContainer.appendChild(totalElement);
 }
+var pro=document.getElementById("procheck");
+pro.addEventListener("click",proc);
+function proc()
+{
+  var proceed = confirm("Are you sure you want to proceed to checkout?");
+
+    // If the user clicks "OK," proceed to the next page
+    if (proceed) {
+      
+      alert("Proceeding to the next page...");
+      
+      window.location.href = "Thankyou.html";
+    } else {
+      // If the user clicks "Cancel" or closes the dialog, do nothing
+      alert("Cancelled checkout");
+    }
+}
 
 
 
@@ -123,4 +142,6 @@ function del(id, name, price) {
     }
   }
 }
+
+
 
