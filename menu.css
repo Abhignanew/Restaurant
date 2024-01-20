@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fbfbf7;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .dish-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    background-color: #fbfbf6;
+  }
+  
+  .dish-card img {
+  width: 100%;
+  height: 200px; /* Increase the height for larger images */
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+  
+  button {
+    background-color: #f76206;
+    color: #fdfdfc;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 0 0 8px 8px; /* Round the bottom corners of the button */
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #cart {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #000; /* Black background for the cart */
+    color: #fff; /* White text for the cart */
+    padding: 10px;
+  }
+  
+  #cart-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #cart-list li {
+    margin: 10px 0;
+  }
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.background-container {
+  background-image: url('2.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+/* Rest of your existing styles */
+/* Add this style to your existing CSS */
+
+.dish-card {
+  border: 1px solid #000; /* Add a black border */
+  border-radius: 8px;
+  margin: 10px;
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  background-color: #f1f187;
+}
