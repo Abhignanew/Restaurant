@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   allBranches.forEach(branch => {
     branch.addEventListener('click', function() {
-      const randomMovement = (Math.random() - 0.5) * 100; // Random value for movement
+      const randomMovement = (Math.random() - 0.5) * 100; 
       this.style.transform = `translate(${randomMovement}px, -5px)`;
       setTimeout(() => {
         this.style.transform = 'translate(0, -5px)';
