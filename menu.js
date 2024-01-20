@@ -1,5 +1,6 @@
 const menuContainer = document.getElementById('menu-container');
 const cartList = document.getElementById('cart-list');
+// const amt=document.getElementById('cart');
 
 // Sample menu data with images
 const menuData = [
@@ -28,10 +29,11 @@ menuData.forEach(dish => {
     <p>Price: ${dish.price}</p>
     <label for="quantity_${dish.id}">Quantity:</label>
     <input type="number" id="quantity_${dish.id}" value="1" min="1">
-    <button onclick="addToCart(${dish.id}, '${dish.name}', ${dish.price})">Add to Cart</button>
+    <button onclick="addToCart(${dish.id}, '${dish.name}', ${dish.price})">Add</button>
   `;
   menuContainer.appendChild(card);
 });
+
 
 // Add to cart function
 function addToCart(id, name, price) {
@@ -42,7 +44,74 @@ function addToCart(id, name, price) {
     const total = price * quantity;
 
     const cartItem = document.createElement('li');
-    cartItem.textContent = `${name} x ${quantity} - Total: ${total}`;
+    cartItem.textContent = `${name} x ${quantity} - Price: ${total}`;
+    const but=document.createElement('button');
+    but.textContent='Delete';
+    but.style.backgroundColor='white';
+    but.style.color='black';
+    but.onclick = function() {
+      del(id, name, price);
+    };
+    but.style.marginLeft='10px';
     cartList.appendChild(cartItem);
+    cartItem.appendChild(but);
+    calculateAndDisplayTotal();
+  
+}
+}
+
+function calculateAndDisplayTotal() {
+  let total = 0;
+
+  const cartItems = cartList.children;
+
+  for (let i = 0; i < cartItems.length; i++) {
+    const cartItem = cartItems[i];
+    const totalPattern = /Total: (\d+)/;
+    const match = cartItem.textContent.match(totalPattern);
+
+    if (match && match[1]) {
+      total += parseInt(match[1], 10);
+    }
+  }
+
+  // Create a div element to display the total
+  const cartTotalElement = document.createElement('div');
+  cartTotalElement.textContent = `Total: ${total}`;
+
+  // Check if there is already a total element, and remove it before adding the new one
+  const existingTotalElement = document.getElementById('cartTotal');
+  if (existingTotalElement) {
+    existingTotalElement.remove();
+  }
+
+  // Set an id for the new total element
+  cartTotalElement.id = 'cartTotal';
+
+  // Append the new total element to the 'cart' div, not the 'cart-list' ul
+  const cartContainer = document.getElementById('cart');
+  cartContainer.appendChild(cartTotalElement);
+}
+
+
+
+
+
+function del(id, name, price) {
+  // Find the <li> element that corresponds to the item to be deleted
+  const cartItems = cartList.getElementsByTagName('li');
+
+  for (let i = 0; i < cartItems.length; i++) {
+    const cartItem = cartItems[i];
+    const itemName = cartItem.textContent.split(' x ')[0]; // Extract item name from the text content
+
+    // Check if the current <li> element corresponds to the item to be deleted
+    if (itemName === name) {
+      // Remove the <li> element from the cartList
+      cartList.removeChild(cartItem);
+      calculateAndDisplayTotal();
+      break; // Break out of the loop once the item is deleted
+    }
   }
 }
+

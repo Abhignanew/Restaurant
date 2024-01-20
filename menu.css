@@ -39,6 +39,8 @@ body {
   
   button {
     background-color: #f76206;
+    margin-top: 10px;
+    /* margin-left: 10px; */
     color: #fdfdfc;
     border: none;
     padding: 8px 12px;
@@ -46,7 +48,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    border-radius: 0 0 8px 8px; /* Round the bottom corners of the button */
+    border-radius: 8px 8px 8px 8px; /* Round the bottom corners of the button */
     cursor: pointer;
   }
   
