@@ -43,22 +43,31 @@ function addToCart(id, name, price) {
   if (quantity > 0) {
     const total = price * quantity;
 
+    // 1. Create cart item element:
     const cartItem = document.createElement('li');
+    cartItem.dataset.price = price; // Add data attribute for price
+    cartItem.dataset.quantity = quantity; // Add data attribute for quantity
     cartItem.textContent = `${name} x ${quantity} - Price: ${total}`;
-    const but=document.createElement('button');
-    but.textContent='Delete';
-    but.style.backgroundColor='white';
-    but.style.color='black';
-    but.onclick = function() {
-      del(id, name, price);
-    };
-    but.style.marginLeft='10px';
+
+    // 2. Create delete button:
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.style.backgroundColor = 'white';
+    deleteButton.style.color = 'black';
+    deleteButton.style.marginLeft = '10px';
+    deleteButton.addEventListener('click', () => {
+      del(id, name, price); // Correctly pass price to del function
+    });
+
+    // 3. Append elements:
+    cartItem.appendChild(deleteButton);
     cartList.appendChild(cartItem);
-    cartItem.appendChild(but);
-    calculateAndDisplayTotal();
-  
+
+    calculateAndDisplayTotal(); // Update total after adding item
+  }
 }
-}
+
+
 
 function calculateAndDisplayTotal() {
   let total = 0;
@@ -67,31 +76,31 @@ function calculateAndDisplayTotal() {
 
   for (let i = 0; i < cartItems.length; i++) {
     const cartItem = cartItems[i];
-    const totalPattern = /Total: (\d+)/;
-    const match = cartItem.textContent.match(totalPattern);
+    const itemData = cartItem.dataset;
+    const itemPrice = parseFloat(itemData.price);
+    const itemQuantity = parseInt(itemData.quantity);
 
-    if (match && match[1]) {
-      total += parseInt(match[1], 10);
-    }
+    total += itemPrice * itemQuantity;
   }
 
   // Create a div element to display the total
-  const cartTotalElement = document.createElement('div');
-  cartTotalElement.textContent = `Total: ${total}`;
+  const totalElement = document.createElement('div');
+  totalElement.id = 'cartTotal'; // Set ID for potential updates
+  totalElement.textContent = `Total: ${total}`;
 
-  // Check if there is already a total element, and remove it before adding the new one
+  // Remove any existing total element
   const existingTotalElement = document.getElementById('cartTotal');
   if (existingTotalElement) {
     existingTotalElement.remove();
   }
 
-  // Set an id for the new total element
-  cartTotalElement.id = 'cartTotal';
-
-  // Append the new total element to the 'cart' div, not the 'cart-list' ul
+  // Append the new total element to the cart container
   const cartContainer = document.getElementById('cart');
-  cartContainer.appendChild(cartTotalElement);
+  cartContainer.appendChild(totalElement);
 }
+
+
+
 
 
 
