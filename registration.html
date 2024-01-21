@@ -60,12 +60,12 @@
 
     <div class="registration-container">
         <h2>Restaurant Registration</h2>
-        <form>
-            <label for="restaurantName">First Name:</label>
-            <input type="text" id="restaurantName" name="restaurantName" required>
+        <form action="process_registration.php" method="post">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firsname" name="firname" required>
 
-            <label for="ownerName">Last Name:</label>
-            <input type="text" id="ownerName" name="ownerName" required>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="laname" name="lasname" required>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
@@ -82,9 +82,34 @@
             <label for="phoneNumber">Phone Number:</label>
             <input type="tel" id="phoneNumber" name="phoneNumber" required>
 
+            <!-- Display message about password match -->
+            <p id="matchMessage"></p>
+
             <button type="submit">Register</button>
         </form>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to check if password and confirm password match
+            function checkPasswordMatch() {
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirmPassword").value;
+                var matchMessage = document.getElementById("matchMessage");
+
+                if (password === confirmPassword) {
+                    matchMessage.innerHTML = "Passwords match!";
+                    matchMessage.style.color = "green";
+                } else {
+                    matchMessage.innerHTML = "Passwords do not match!";
+                    matchMessage.style.color = "red";
+                }
+            }
+
+            // Attach the function to the "input" event of both password fields
+            document.getElementById("password").addEventListener("input", checkPasswordMatch);
+            document.getElementById("confirmPassword").addEventListener("input", checkPasswordMatch);
+        });
+    </script>
 </body>
 </html>
