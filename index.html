@@ -1,100 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Add this style to set a fixed width and height for the images */
-    .menuItem img {
-      width: 200px; /* Adjust the width as needed */
-      height: 150px; /* Adjust the height as needed */
-      object-fit: cover; /* Maintain aspect ratio and cover the container */
-      border-radius: 5px; /* Optional: Add border-radius for rounded corners */
-    }
-  </style>
-  <title>Restaurant Menu</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- fontawesome link here -->
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    
+    <!-- style link here -->
+    <link rel="stylesheet" href="style.css">
+    
+
 </head>
 <body>
+    
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="">
+        </div>
 
-  <header>
-    <h1>Restaurant Menu</h1>
-  </header>
+        <nav class="navbar">
+            <a href="#">home</a>
+            <a href="#about">about</a>
+            <a href="#">Menu</a>
 
-  <div id="menu">
-    <div class="category">Breakfast</div>
-    <div class="menuItem" onclick="showDetails('dosa', 'dosa.jpg', 'Rs-55')">
-      <img src="dosa.jpg" alt="Dosa">
-      DOSA - Rs-55
-    </div>
-    <div class="menuItem" onclick="showDetails('idli', 'idli.jpg', 'Rs-30')">
-      <img src="idli.jpg" alt="Idli">
-      IDLI - Rs-30
-    </div>
-    <div class="menuItem" onclick="showDetails('puri', 'puri.jpg', 'Rs-60')">
-      <img src="puri.jpg" alt="puri">
-      PURI - Rs-60
-    </div>
-    <div class="menuItem" onclick="showDetails('pongal', 'pongal.jpg', 'Rs-40')">
-      <img src="pongal.jpg" alt="pongal">
-      PONGAL - Rs-40
-    </div>
+            <a href="#gallery">gallery</a>
+           
 
-    <div class="category">Lunch</div>
-    <div class="menuItem" onclick="showDetails('South Indian meal', 'south.jpg', '12.99')">
-      <img src="south.jpg" alt="South Indian meal">
-      SOUTH INDIAN MEAL - Rs-80
-    </div>
-    <div class="menuItem" onclick="showDetails('North Indian meal', 'north.jpg', '11.49')">
-      <img src="north.jpg" alt="North Indian meal">
-      NORTH INDIAN MEAL - Rs-80
-    </div>
+        </nav>
+        
 
-    <div class="menuItem" onclick="showDetails('Curdrice', 'Curdrice.jpg', '16.99')">
-      <img src="Curdrice.jpg" alt="Curdrice">
-      CURD RICE -Rs-70
-    </div>
-    <div class="menuItem" onclick="showDetails('roticurry', 'roticurry.jpg', '21.99')">
-      <img src="roticurry.jpg" alt="Roticurry">
-      ROTI CURRY- Rs-60
-    </div>
+        <div class="icons">
+            <div id="menu-bar" class="fas fa-bars"></div>
+            <a class="login-btn" href="login.html">login</a>
+        </div>
 
-    <div class="category">Snacks</div>
-    <div class="menuItem" onclick="showDetails('Pani puri', 'panipuri.jpg', '14.99')">
-      <img src="panipuri.jpg" alt="Pani puri">
-      PANI PURI - Rs-40
-    </div>
-    <div class="menuItem" onclick="showDetails('Icecream', 'icecream.jpg', '9.49')">
-      <img src="icecream.jpg" alt="Icecream">
-      ICECREAM - Rs-30
-    </div>
-    <div class="menuItem" onclick="showDetails('frenchfries', 'frenchfries.jpg', '14.99')">
-      <img src="frenchfries.jpg" alt="">
-      FRENCH FRIES- Rs-50
+    </header>
+
+    <div class="home">
+
+        <div class="main-home">
+            <div class="home-inner-content">
+                <div class="home-image">
+                <img src="images\c2ee8aa4-76a4-4241-a7f0-0d9f6a0f4917.png" alt="">
+                </div>
+            </div>
+
+            <div class="home-inner-content">
+                <div class="home-text-content">
+                <h1>ENJOY YOUR HEALTHY DELICIOUS MEAL</h1>
+                <p></p>
+                <p>Food Lover is a culinary destination that tantalizes your taste buds with an array of mouthwatering flavors.Whether you're craving a savary
+                    meal or a sweet treat,Delish offers a diverse menu that caters to every culinary preference.
+                </p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="category">Dinner</div>
-    <div class="menuItem" onclick="showDetails('Curdrice', 'Curdrice.jpg', '16.99')">
-      <img src="Curdrice.jpg" alt="Curdrice">
-      CURD RICE -Rs-70
-    </div>
-    <div class="menuItem" onclick="showDetails('roticurry', 'roticurry.jpg', '21.99')">
-      <img src="roticurry.jpg" alt="Roticurry">
-      ROTI CURRY- Rs-60
-    </div>
-    <div class="menuItem" onclick="showDetails('South Indian meal', 'south.jpg', '12.99')">
-      <img src="south.jpg" alt="South Indian meal">
-      SOUTH INDIAN MEAL - Rs-80
-    </div>
-    <div class="menuItem" onclick="showDetails('North Indian meal', 'north.jpg', '11.49')">
-      <img src="north.jpg" alt="North Indian meal">
-      NORTH INDIAN MEAL - Rs-80
+
+    <div id="about" class="about">
+        <div class="main-about">
+            <div class="about-content">
+                <div class="about-inner-content">
+                    <img class="myimageabout" src="images\pngtree-an-arrangement-of-various-indian-food-image_2683809.png" alt="">
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-inner-content">
+                    <div class="about-text-content">
+                        <h1>About us</h1>
+                        <p> At Food lover, we are a passionate team of food lovers, chefs, and culinary enthusiasts dedicated to bringing the joy of cooking and the pleasure of savoring delicious meals into the lives of our community. Our platform is more than just a collection of recipes; it's a celebration of the art and science of cooking, a place where flavors, cultures, and creativity converge.</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-  </div>
+    <div class="quality">
+        <div class="main-quality">
+            <div class="main-inner-quality">
+                <div class="quality-content">
+                    <h1>Our food quality</h1>
+                    <p>Quality is at the heart of everything we do. From the ingredients in our recipes to the information we share, we are dedicated to delivering excellence. We emphasize the importance of using fresh, sustainable, and high-quality ingredients, and we strive to provide content that is accurate, engaging, and inspiring.</p>
 
-  <button id="navigateButton" onclick="navigateToOtherPage()">Next Page</button>
 
-  <script src="script.js"></script>
+                </div>
+            </div>
+
+            <div class="main-inner-quality">
+                <div class="quality-content qulity-image">
+                    <img src="images\indian-biryani.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="gallery" class="gallery">
+
+    </div> <div class="gallery">
+
+        <h1>Gallery</h1>
+        
+        <div class="main-gallery">
+            <div class="inner-gallery">
+                <div class="gallery-image">
+                    <img src= "images\360_F_480851014_41CQJxOgCx5L8diTnoZq9UuYg84pf5xl.png" alt="">
+                </div>
+            </div>
+
+            <div class="inner-gallery">
+                <div class="gallery-image">
+                    <img src="images\popular-indian-dishes-cuisine.png"alt="">
+                </div>
+            </div>
+
+            <div class="inner-gallery">
+                <div class="gallery-image">
+                    <img src="images\idly-or-idli[1].png" alt="">
+                </div>
+            </div>
+
+            <div class="inner-gallery">
+                <div class="gallery-image">
+                    <img src="images\405724.png"alt="">
+                </div>
+            </div>
+
+            <div class="inner-gallery">
+                <div class="gallery-image">
+                    <img src="images\berry-cheesecake.png" alt="">
+                </div>
+            </div>
+
+            <div class="inner-gallery">
+                <div class="gallery-image">
+                    <img src="images\comida-india.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="enjoy-our-food">
+
+        <div class="food-main-content">
+            <h1>enjoy our food</h1>
+            <p>We're thrilled to have you here at Food Lover! Prepare yourself for a feast of culinary delights, where every recipe is a celebration of flavors, textures, and the joy of cooking.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="main-footer">
+            <div class="footer-logo"><img src="images/footerlogo.png" alt=""></div>
+        </div>
+
+
+
+        <footernav class="footer-navbar">
+            <a href="#index.html">home</a>
+            <a href="#">about </a>
+            <a href="#">Menu</a>
+            <a href="#">gallery</a>
+        
+        </footernav>
+
+    </div>
+
+
+
+
+
+
+
+<!-- scroll reveal javascript link -->
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- javascript link here -->
+
+<script src="script.js"></script>
 </body>
 </html>
