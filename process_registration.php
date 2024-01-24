@@ -1,3 +1,4 @@
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
@@ -22,7 +23,7 @@ else{
     $stmt->bind_param("sssssi",$firname,$lasname,$email,$password,$address,$phoneNumber);
 
 $stmt->execute();
-header("Location: menu1.html"); 
+header("Location: http://localhost/resto/Restaurant/menu1.html"); 
         
 $stmt->close();
 $conn->close();
