@@ -368,6 +368,7 @@ body {
 label {
     display: block;
     margin-bottom: 8px;
+    color: black;
 }
 
 input, textarea {
