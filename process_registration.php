@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "All fields are required.";
     } else {
         // Database connection
-$conn=new mysqli('localhost','root','Not_working2','restaurantdb');
+$conn=new mysqli('localhost','root','','restaurantdb');
 if ($conn->connect_error) {
     die('Connection Failed:'. $conn->connect_error);
 }
