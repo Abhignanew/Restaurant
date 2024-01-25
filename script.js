@@ -9,17 +9,37 @@ menubar.onclick = () =>{
     
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const ratingInputs = document.querySelectorAll('input[name="rating"]');
-  const feedbackMessage = document.getElementById('feedbackMessage');
-  
-  ratingInputs.forEach(input => {
-      input.addEventListener('change', function() {
-          const selectedRating = this.value;
-          feedbackMessage.textContent = `You rated ${selectedRating} star(s),Thank you!!.`;
-      });
-  });
-});
+// script.js
+
+// To access the stars
+let stars = 
+	document.getElementsByClassName("star");
+let output = 
+	document.getElementById("output");
+
+// Funtion to update rating
+function gfg(n) {
+	remove();
+	for (let i = 0; i < n; i++) {
+		if (n == 1) cls = "one";
+		else if (n == 2) cls = "two";
+		else if (n == 3) cls = "three";
+		else if (n == 4) cls = "four";
+		else if (n == 5) cls = "five";
+		stars[i].className = "star " + cls;
+	}
+	output.innerText = "Thank you for rating: " + n + "/5 stars";
+}
+
+// To remove the pre-applied styling
+function remove() {
+	let i = 0;
+	while (i < 5) {
+		stars[i].className = "star";
+		i++;
+	}
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   const allBranches = document.querySelectorAll('.branch');
 

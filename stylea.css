@@ -21,6 +21,48 @@ html {
     font-size: 65%;
     scroll-behavior: smooth;
 }
+.card {
+    box-align: center;
+    max-width: 400px; /* Set a max-width for responsiveness */
+    margin: 0 auto; 
+    background: #fff;
+    margin: 5 10rem;
+    padding: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-top: 100px;
+}
+.card:hover {
+    transform: scale(1.05); /* Increase the size on hover */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+    
+.star {
+    font-size: 10vh;
+    cursor: pointer;
+}
+    
+.one {
+    color: rgb(255, 0, 0);
+}
+    
+.two {
+    color: rgb(255, 106, 0);
+}
+    
+.three {
+    color: rgb(251, 255, 120);
+}
+    
+.four {
+    color: rgb(255, 255, 0);
+}
+    
+.five {
+    color: rgb(24, 159, 14);
+}
+    
 
 .header {
     padding: 1rem 7%;
@@ -125,6 +167,12 @@ html {
     width: 100%;
     object-fit: cover;
 }
+.quality-image img:hover {
+    /* Add your hover styles here */
+    opacity: 0.8; /* Example: Reducing opacity on hover */
+    transform: scale(1.1); /* Example: Scaling the image on hover */
+    /* Add any other styles you want to apply on hover */
+}
 
 .enjoy-our-food{
     padding: 0rem 7%;
@@ -165,6 +213,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 #paymentForm {
     
@@ -239,63 +288,7 @@ button:hover {
 }
 
 
-/*.rating-box {
-    text-align: center;
-    margin-top: 20px;
-}
 
-.rating input[type="radio"] {
-    display: none;
-}
-
-.rating label {
-    cursor: pointer;
-    font-size: 40px;
-    color: #ccc;
-    margin: 0 5px;
-}
-
-.rating label:before {
-    content: "\2605";
-    display: inline-block;
-}
-
-.rating input[type="radio"]:checked~label {
-    color: #FFD700;
-}*/
-.rating-box {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.rating input[type="radio"] {
-    display: none;
-}
-
-.rating label {
-    cursor: pointer;
-    font-size: 40px;
-    color: #e58f00;
-    margin: 0 5px;
-    display: inline-block;
-    transition: color 0.3s;
-    border: 1px solid #e58f00; /* Border color */
-    border-radius: 50%; /* Rounded border for circular stars */
-}
-
-.rating label:hover {
-    color: #ffcc00;
-    border-color: #ffcc00; /* Border color on hover */
-}
-
-
-.rating label:before {
-    content: "\2605";
-}
-
-.rating input[type="radio"]:checked~label {
-    color: #FFD700;
-}
 
 .before{
     background-color: #1d1d23;

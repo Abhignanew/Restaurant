@@ -11,6 +11,8 @@
     
     <!-- style link here -->
     <link rel="stylesheet" href="stylea.css">
+    <link rel="stylesheet" href="star.css">
+    
    
     
 
@@ -51,26 +53,32 @@
         <input type="password" id="pin" name="pin" pattern="[0-9]{3}" placeholder="***" required>
     
         <button type="button" onclick="submitPayment()">Submit Payment</button>
-      </form>
+    </form>
 
-    <div class="rating-box">
-        <div class="rating" id="rating">
-            <h2>Please provide your feedback</h2>
-            <fieldset class="rating">
-                <input type="radio" id="star5" name="rating" value="5" />
-                <label for="star5" title="5 stars"></label>
-                <input type="radio" id="star4" name="rating" value="4" />
-                <label for="star4" title="4 stars"></label>
-                <input type="radio" id="star3" name="rating" value="3" />
-                <label for="star3" title="3 stars"></label>
-                <input type="radio" id="star2" name="rating" value="2" />
-                <label for="star2" title="2 stars"></label>
-                <input type="radio" id="star1" name="rating" value="1" />
-                <label for="star1" title="1 star"></label>
-            </fieldset>
-        </div>
-        <div id="feedbackMessage" class="feedback-message"></div>
-    </div>
+    <div class="card">
+		<h1>Please provide your feedback</h1>
+		<br />
+		<span onclick="gfg(1)"
+			class="star">★
+		</span>
+		<span onclick="gfg(2)"
+			class="star">★
+		</span>
+		<span onclick="gfg(3)"
+			class="star">★
+		</span>
+		<span onclick="gfg(4)"
+			class="star">★
+		</span>
+		<span onclick="gfg(5)"
+			class="star">★
+		</span>
+		<h3 id="output">
+			thank you for Rating : 0/5 
+		</h3>
+	</div>
+
+    
     <div class="contact-container">
         <div class="contact-form">
             <h2>Contact Us</h2>
@@ -183,7 +191,7 @@
    <script src="https://unpkg.com/scrollreveal"></script>
 
    <!-- javascript link here -->
-
+ 
  <script src="script.js"></script>
  <script src="sc.js"></script>
 </body>
