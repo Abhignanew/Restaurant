@@ -1,6 +1,5 @@
 const menuContainer = document.getElementById('menu-container');
 const cartList = document.getElementById('cart-list');
-// const amt=document.getElementById('cart');
 
 // Sample menu data with images
 const menuData = [
@@ -14,9 +13,8 @@ const menuData = [
   { id: 8, name: 'FRENCH FRIES', price: 30, image: 'frenchfries.jpg' },
   { id: 9, name: 'ROTI CURRY', price: 50, image: 'roticurry.jpg' },
   { id: 10, name: 'PURI', price: 70, image: 'puri.jpg' },
-  { id: 10, name: 'LEMON JUICE', price: 70, image: 'lemonjuice.jpg' },
-  { id: 10, name: 'MAGGIE', price: 70, image: 'maggie.jpeg' }
-  // Add more dishes as needed
+  { id: 11, name: 'LEMON JUICE', price: 70, image: 'lemonjuice.jpg' },
+  { id: 12, name: 'MAGGIE', price: 70, image: 'maggie.jpeg' }
 ];
 
 // Render menu items
@@ -30,12 +28,10 @@ menuData.forEach(dish => {
     <label for="quantity_${dish.id}">Quantity:</label>
     <input type="number" id="quantity_${dish.id}" value="1" min="1">
     <button onclick="addToCart(${dish.id}, '${dish.name}', ${dish.price})">Add</button>
-    
   `;
   
   menuContainer.appendChild(card);
 });
-
 
 // Add to cart function
 function addToCart(id, name, price) {
@@ -69,10 +65,9 @@ function addToCart(id, name, price) {
   }
 }
 
-
-
 function calculateAndDisplayTotal() {
   let total = 0;
+  let displayCheckoutButton = false;
 
   const cartItems = cartList.children;
 
@@ -83,6 +78,10 @@ function calculateAndDisplayTotal() {
     const itemQuantity = parseInt(itemData.quantity);
 
     total += itemPrice * itemQuantity;
+
+    if (total !== 0) {
+      displayCheckoutButton = true;
+    }
   }
 
   // Create a div element to display the total
@@ -99,31 +98,33 @@ function calculateAndDisplayTotal() {
   // Append the new total element to the cart container
   const cartContainer = document.getElementById('cart');
   cartContainer.appendChild(totalElement);
+
+  // Display or hide checkout button based on the flag
+  const checkoutButtonContainer = document.getElementById('checkout-button-container');
+  if (displayCheckoutButton) {
+    const checkoutButton = document.createElement('button');
+    checkoutButton.textContent = 'Proceed To Checkout';
+    checkoutButton.id = 'procheck';
+    checkoutButton.addEventListener('click', proc);
+    checkoutButtonContainer.innerHTML = ''; // Clear existing content
+    checkoutButtonContainer.appendChild(checkoutButton);
+  } else {
+    checkoutButtonContainer.innerHTML = ''; // Clear button if total is zero
+  }
 }
-var pro=document.getElementById("procheck");
-pro.addEventListener("click",proc);
-function proc()
-{
+
+function proc() {
   var proceed = confirm("Are you sure you want to proceed to checkout?");
 
-    // If the user clicks "OK," proceed to the next page
-    if (proceed) {
-      
-      alert("Proceeding to the next page...");
-      
-      window.location.href = "Thankyou.html";
-    } else {
-      // If the user clicks "Cancel" or closes the dialog, do nothing
-      alert("Cancelled checkout");
-    }
+  // If the user clicks "OK," proceed to the next page
+  if (proceed) {
+    alert("Proceeding to the next page...");
+    window.location.href = "Thankyou.html";
+  } else {
+    // If the user clicks "Cancel" or closes the dialog, do nothing
+    alert("Cancelled checkout");
+  }
 }
-
-
-
-
-
-
-
 
 function del(id, name, price) {
   // Find the <li> element that corresponds to the item to be deleted
@@ -142,6 +143,3 @@ function del(id, name, price) {
     }
   }
 }
-
-
-
